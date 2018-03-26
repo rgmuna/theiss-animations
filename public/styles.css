@@ -1,0 +1,113 @@
+* {
+  font-family: 'Roboto', 'HelveticaNeue-Light', 'Helvetica Neue Light',
+    'Helvetica Neue', Helvetica, Arial, 'Lucida Grande', sans-serif;
+  font-weight: normal;
+  font-size: 20px;
+}
+
+html,
+body {
+  height: 100%; /* important to vertically align the container */
+  margin: 0;
+  padding: 0;
+}
+
+.vertical-center {
+  min-height: 100%;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-title {
+  border-radius: 10px;
+  box-shadow: 0px 0px 120px gray;
+}
+
+img {
+  height: 100px;
+}
+#section-0 {
+  background-image: url('./assets/visualizer-demo.gif');
+  background-size: cover;
+}
+#section-1 {
+  background-color: black;
+  color: white;
+}
+
+#section-2 {
+  background-color: #0f0f0f;
+  color: white;
+}
+#section-3 {
+  background-image: url('./assets/footer_lodyas.png');
+  color: white;
+}
+#section-4 {
+  background-color: black;
+  color: white;
+}
+#contact {
+  background-color: #0f0f0f;
+  color: white;
+}
+
+.subTitle {
+  font-size: 65px;
+  font-weight: 900;
+}
+
+.shortTitle {
+  font-size: 20px;
+  color: #00ffff;
+  font-weight: 300;
+}
+
+#section-1 .subTitle {
+  color: #ff0099;
+}
+#section-2 .subTitle {
+  color: #00ffff;
+}
+#section-3 .subTitle {
+  color: #33ff00;
+}
+#section-4 .subTitle {
+  color: #ffff00;
+}
+#contact {
+  height: 500px;
+  background-color: #233237;
+}
+
+#contact a {
+  color: white;
+  font-size: 25px;
+}
+
+p {
+  font-size: 20px;
+}
+
+.contactInfo {
+  text-align: center;
+  font-size: 25px;
+  padding-top: 15px;
+}
+
+.footerItems {
+  font-size: 10px;
+  background-color: black;
+  color: gray;
+}
+.footerItems a {
+  font-size: 10px;
+  color: gray;
+}
+
+@media (max-width: 768px) {
+  .subTitle {
+    font-size: 50px;
+  }
+}
