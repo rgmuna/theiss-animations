@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="en-us">
+<html ng-app="theissApp" lang="en-us">
     <head>
         <title>Theiss Animations</title>
         <meta http-equiv="X-UA-Compatible" content="IE=Edge">
@@ -13,11 +13,20 @@
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css" integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css" integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
         <link href="styles.css" rel="stylesheet"></link>
+        <!-- <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"> -->
+
         <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700,900" rel="stylesheet">
         <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.6.7/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-css/1.0.8/angular-css.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/3.7.0/firebase.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angularFire/2.3.0/angularfire.min.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
+        <script src="app.js"></script>
+
     </head>
 
-    <body>
+    <body ng-controller="TheissCtrl">
 
       <section id="section-0" class="vertical-center">
         <div class="container text-center">
@@ -111,12 +120,34 @@
               Interested? Get in Touch!
             </h4>
           </div>
-          <div class="row">
+
+          <div class="row text-center">
             <div class="col-xs-12 contactInfo">
               <span class="hidden-xs">Email: &nbsp</span> <a href="mailto:Info@theissanimations.com">Info@theissanimations.com</a>
             </div>
             <div class="col-xs-12 contactInfo">
               <span class="hidden-xs">Phone: &nbsp</span><a href="tel:+15309661866">530-966-1866</a>
+            </div>
+          </div>
+
+
+          <div class="row" style="padding-top: 50px; padding-bottom: 150px;">
+            <div class="col-sm-8 col-sm-offset-2 text-center betaInfo">If you'd like to beta test the product, please submit your information below and we'll get back to you as soon as possible!</div>
+            <form style="color: black" ng-show="notSubmitted">
+              <div class="col-xs-12 text-center input-container">
+                <span class="contactInfo">Name: </span> <input class="contactInput" type="text" name="Name" ng-model="user.name">
+              </div>
+              <br>
+              <div class="col-xs-12 text-center input-container">
+                <span class="contactInfo" >Email: </span> <input class="contactInput" type="email" name="Email" ng-model="user.email">
+              </div>
+              <br>
+              <div class="col-xs-12 text-center input-container">
+                <button class="submitBtn" ng-class="{'btnEnabled': filledOut, 'btnDisabled': !filledOut}" ng-disabled="user.name==='' || user.email===''" ng-click="submitForm()">Submit</button>
+              </div>
+            </form>
+            <div class="col-xs-12 alert alert-success" ng-show="!notSubmitted">
+              <strong>Success!</strong> Thank you for your submission! We'll be in touch shortly.
             </div>
           </div>
         </div>
@@ -127,19 +158,17 @@
         <div class="footerItems">Icons made by <a href="https://www.flaticon.com/authors/darius-dan" title="Darius Dan">Darius Dan</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a> is licensed by <a href="http://creativecommons.org/licenses/by/3.0/" title="Creative Commons BY 3.0" target="_blank">CC 3.0 BY</a></div>
       </footer>
 
-      <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
       <script>
       // Initialize Firebase
-var config = {
-  apiKey: 'AIzaSyBSK_ysifrSEOaS1bqI-JEhD4KoaftMa0Y',
-  authDomain: 'theiss-animations.firebaseapp.com',
-  databaseURL: 'https://theiss-animations.firebaseio.com',
-  projectId: 'theiss-animations',
-  storageBucket: '',
-  messagingSenderId: '1088700716328'
-};
-firebase.initializeApp(config);
-</script>
-      <script src="app.js"></script>
+        var config = {
+          apiKey: 'AIzaSyBSK_ysifrSEOaS1bqI-JEhD4KoaftMa0Y',
+          authDomain: 'theiss-animations.firebaseapp.com',
+          databaseURL: 'https://theiss-animations.firebaseio.com',
+          projectId: 'theiss-animations',
+          storageBucket: '',
+          messagingSenderId: '1088700716328'
+        };
+        firebase.initializeApp(config);
+    </script>
     </body>
 </html>
