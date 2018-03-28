@@ -151,6 +151,10 @@
                 <span class="contactInfo" >Email: </span> <input class="contactInput" type="email" name="Email" ng-model="user.email">
               </div>
               <br>
+              <div class="col-sm-4 col-sm-offset-4 input-container">
+                <span class="contactInfo" >Message: </span>
+                <textarea style="width: 100%; border-radius: 10px;" name="name" rows="3" ng-model="user.message"></textarea>
+              </div>
               <div class="col-xs-12 text-center input-container">
                 <button class="submitBtn" ng-class="{'btnEnabled': filledOut, 'btnDisabled': !filledOut}" ng-disabled="user.name==='' || user.email===''" ng-click="submitForm()">Submit</button>
               </div>

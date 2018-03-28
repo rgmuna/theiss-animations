@@ -6,7 +6,8 @@ var theissApp = angular.module('theissApp', [
 theissApp.controller('TheissCtrl', ['$scope', '$document', '$timeout', function($scope, $document, $timeout) {
   $scope.user = {
     name: '',
-    email: ''
+    email: '',
+    message: ''
   }
 
   $scope.notSubmitted = true;
@@ -36,7 +37,8 @@ theissApp.controller('TheissCtrl', ['$scope', '$document', '$timeout', function(
             $scope.notSubmitted = true;
             $scope.user = {
               name: '',
-              email: ''
+              email: '',
+              message: ''
             };
             $scope.$apply();
         }, 5000 );
