@@ -12,6 +12,23 @@ body {
   padding: 0;
 }
 
+.scrollBtn{
+  color: #33ff00;
+  padding: 10px;
+  border: 1px solid #33ff00;
+  border-radius: 10px;
+}
+
+.scrollBtn:focus{
+  color: #33ff00;
+  text-decoration: none;
+}
+
+.scrollBtn:hover{
+  background-color: #33ff00;
+  color: black;
+  text-decoration: none;
+}
 .vertical-center {
   min-height: 100%;
   min-height: 100vh;

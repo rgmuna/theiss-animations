@@ -1,4 +1,7 @@
-var theissApp = angular.module('theissApp', []);
+var theissApp = angular.module('theissApp', [
+    'duScroll',
+    'ngAnimate'
+]);
 
 theissApp.controller('TheissCtrl', ['$scope', '$document', '$timeout', function($scope, $document, $timeout) {
   $scope.user = {
@@ -24,7 +27,6 @@ theissApp.controller('TheissCtrl', ['$scope', '$document', '$timeout', function(
   $scope.submitForm = function(){
     console.log('form clicked!');
 
-
     $scope.betaTesters.push( $scope.user )
     .then(function(){
       $scope.notSubmitted = false;
@@ -44,6 +46,9 @@ theissApp.controller('TheissCtrl', ['$scope', '$document', '$timeout', function(
     })
   }
 
-
+  var contact = angular.element(document.getElementById('contact'));
+  $scope.toContact = function() {
+    $document.scrollToElementAnimated(contact);
   }
-]);
+
+}]);
